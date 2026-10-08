@@ -17,7 +17,7 @@ import { copyRecord, decodeRecord, encodeRecord, readRecord, readRecordBytes, re
 import { manifest as defaultManifest, builderRecordings } from "./publication-manifest";
 import { assertPreserved } from "../../roadmap/verification/record-integrity";
 
-/** Paths an entry's functions get: the app root, jev-experiments/, and a resolver into public/. */
+/** Paths an entry's functions get: the app root, the repository root (`lab`), and a resolver into public/. */
 export type Context = { app: string; lab: string; out: (path: string) => string };
 
 /** A display transform of the whole document, applied after the steps; verification applies it to the source too. */
@@ -144,7 +144,7 @@ export const unlistedFiles = (root: string, manifest: readonly Entry[] = default
 export const gzipHeaderSource = (manifest: readonly Entry[] = defaultManifest) =>
   `/(${["data", ...manifest.filter((e) => e.gzip).map((e) => e.path!)].join("|")})/(.*)\\.(json|jsonl)`;
 
-/** Recordings, relative to jev-experiments/, committed as `.gz` with a gitignored working copy. */
+/** Recordings, relative to the repository root, committed as `.gz` with a gitignored working copy. */
 export function gzippedRecordings(manifest: readonly Entry[] = defaultManifest, ctx = context()) {
   const read = manifest.flatMap((e) => [
     ...(e.record ? [e.record.source] : []),

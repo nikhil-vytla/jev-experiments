@@ -47,13 +47,13 @@ export async function sourceSha256(source: SourceFile): Promise<string> {
 /** General reading links follow the repository. Live code uses pinnedSource. */
 export function repoSource(path: string): string | undefined {
   if (!isRepositoryPath(path)) return undefined;
-  return `https://github.com/nikhil-vytla/hatch/blob/main/${path.split("/").map(encodeURIComponent).join("/")}`;
+  return `https://github.com/nikhil-vytla/jev-experiments/blob/main/${path.split("/").map(encodeURIComponent).join("/")}`;
 }
 
 export function pinnedSource(path: string, commit?: string): string | undefined {
   if (!isRepositoryPath(path) || !commit || !/^[a-f0-9]{40}$/.test(commit))
     return undefined;
-  return `https://github.com/nikhil-vytla/hatch/blob/${commit}/${path.split("/").map(encodeURIComponent).join("/")}`;
+  return `https://github.com/nikhil-vytla/jev-experiments/blob/${commit}/${path.split("/").map(encodeURIComponent).join("/")}`;
 }
 
 export const sourceFileName = (source: SourceFile) =>

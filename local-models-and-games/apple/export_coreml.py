@@ -197,7 +197,7 @@ for units in [ct.ComputeUnit.CPU_ONLY, ct.ComputeUnit.ALL]:
     }
 passed = all(c["same_argmax"] and c["max_probability_error"] < 0.02 for c in checks)
 report = {
-    "package": "jev-experiments/.cache/apple-decisions/LayaDecisions.mlpackage",
+    "package": ".cache/apple-decisions/LayaDecisions.mlpackage",
     "package_bytes": sum(p.stat().st_size for p in package.rglob("*") if p.is_file()),
     "precision": "float16",
     "rotary_tables": "Precomputed in float32 before tracing at the fixed 768-token shape.",

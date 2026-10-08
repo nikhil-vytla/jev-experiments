@@ -1,6 +1,6 @@
 # jev-decide
 
-A small kept tool in `jev-experiments/tools/decide-cli/`. It isn't published to npm; run it from the repo, or `bun link` it. It was called `jev-lab` until 4 Oct 2026. It was renamed because the Python research runner (`src/jev_lab/cli.py`) installs a `jev-lab` command too.
+A small kept tool in `tools/decide-cli/`. It isn't published to npm; run it from the repo, or `bun link` it. It was called `jev-lab` until 4 Oct 2026. It was renamed because the Python research runner (`src/jev_lab/cli.py`) installs a `jev-lab` command too.
 
 `jev-decide` runs the site's typed-decision studies against any endpoint that speaks Jev's request format. It writes recordings in the same row format as ours, so you can compare your model with our Jev run request for request. It also checks agent logs for invented tool arguments.
 

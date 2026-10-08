@@ -7,7 +7,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { preparePublicResult } from "../../rewardbench2/publication";
 
-/** One change to a record's `result`, named for the integrity index. `lab` is jev-experiments/. */
+/** One change to a record's `result`, named for the integrity index. `lab` is the repository root. */
 export type Step = { readonly name: string; apply(result: any, lab: string): void };
 
 const bankingRevision = "57ec275d8078af65b7731c2a98be812d844a6d6b";

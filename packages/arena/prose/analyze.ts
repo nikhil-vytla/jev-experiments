@@ -2,7 +2,7 @@
  * The frozen analysis for the prose studies. Reads the recording, rebuilds every job from
  * `variants.ts`, and writes `results.md` (tables) and `results.json` (every number).
  *
- *   bun jev-experiments/packages/arena/prose/analyze.ts
+ *   bun packages/arena/prose/analyze.ts
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";

@@ -92,7 +92,7 @@ function ResidentFigure() {
         <p>
           The request also included all twelve residents, open places, queues,
           the weather and the current event.{" "}
-          <a href={repoSource("jev-experiments/live-worlds/crowd/demo.jsonl")}>
+          <a href={repoSource("live-worlds/crowd/demo.jsonl")}>
             Full recorded request and response ↗
           </a>
         </p>
@@ -149,7 +149,7 @@ export function CrowdNote() {
         className="note-code"
         source={{
           text: crowdSource,
-          path: "jev-experiments/live-worlds/crowd/engine.ts",
+          path: "live-worlds/crowd/engine.ts",
         }}
         title="An answer must still belong to this world"
         markers={{
@@ -184,11 +184,11 @@ export function CrowdNote() {
       <aside className="note-references">
         <h2>Evidence and method</h2>
         <p>
-          <a href={repoSource("jev-experiments/live-worlds/crowd/README.md")}>
+          <a href={repoSource("live-worlds/crowd/README.md")}>
             Recorded run and engine notes
           </a>{" "}
           ·{" "}
-          <a href={repoSource("jev-experiments/live-worlds/crowd/demo.jsonl")}>
+          <a href={repoSource("live-worlds/crowd/demo.jsonl")}>
             Canonical recording
           </a>{" "}
           ·{" "}

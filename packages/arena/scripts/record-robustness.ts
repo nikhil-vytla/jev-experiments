@@ -13,7 +13,7 @@
  * One request at a time with patient retries (nothing here is timed). Weak
  * answers are never retried. Refuses to overwrite existing outputs.
  *
- *   bun jev-experiments/packages/arena/scripts/record-robustness.ts
+ *   bun packages/arena/scripts/record-robustness.ts
  */
 import "../../../experience-prototypes/scripts/credentials";
 import { evaluate } from "../../jev-client/src/index";

@@ -102,7 +102,7 @@ benchmark only when it answered every row; error rows never count.
 
 ```sh
 uv run --with mlx-lm python server.py --model mlx-community/Qwen3-0.6B-4bit --port 30000
-bun jev-experiments/packages/arena/open-decisions/record.ts typed qwen3-0.6b
+bun packages/arena/open-decisions/record.ts typed qwen3-0.6b
 ```
 
 ## Caveats

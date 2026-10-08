@@ -11,7 +11,7 @@
  *   Grid "can exit": reach E without D (p1), reach K without D (p2), from K reach E (p3);
  *     P(exit) = p1 + (1 - p1) · p2 · p3.
  *
- *   bun jev-experiments/packages/arena/scripts/decompose-experiment.ts
+ *   bun packages/arena/scripts/decompose-experiment.ts
  */
 import "../../../experience-prototypes/scripts/credentials";
 import { appendFileSync, existsSync, readFileSync } from "node:fs";

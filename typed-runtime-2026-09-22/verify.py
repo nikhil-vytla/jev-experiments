@@ -17,7 +17,7 @@ import time
 
 BUN_VERSION = "1.3.14"
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parents[1]
+REPO = HERE.parent
 
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -84,7 +84,7 @@ def run(ref: str, output: Path) -> dict:
         area = Path(temporary); source = area / "source"; source.mkdir()
         extract(archive, source)
         inputs = {p.relative_to(source).as_posix(): sha(p.read_bytes()) for p in sorted(source.rglob("*")) if p.is_file()}
-        generated_path = "jev-experiments/visual-search/results.jsonl"
+        generated_path = "visual-search/results.jsonl"
         generated_before = (source / generated_path).read_bytes()
         (output / "source.json").write_text(json.dumps({"commit": commit, "files": inputs}, indent=2) + "\n")
         report["sourceManifestSha256"] = sha((output / "source.json").read_bytes())
@@ -92,9 +92,9 @@ def run(ref: str, output: Path) -> dict:
                "TMPDIR": str(area), "XDG_CONFIG_HOME": str(area / "config"), "XDG_CACHE_HOME": str(area / "cache"),
                "BUN_INSTALL_CACHE_DIR": str(area / "bun-cache"), "NPM_CONFIG_USERCONFIG": os.devnull,
                "PYTHONNOUSERSITE": "1", "PYTHONDONTWRITEBYTECODE": "1", "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": os.devnull}
-        app = "jev-experiments/experience-prototypes"
-        road = "jev-experiments/roadmap"
-        adapter = "jev-experiments/adapters/typescript"
+        app = "experience-prototypes"
+        road = "roadmap"
+        adapter = "adapters/typescript"
         steps = [
             ("bun-version", ["bun", "--version"], "."),
             ("app-frozen-install", ["bun", "install", "--frozen-lockfile"], app),
@@ -103,8 +103,8 @@ def run(ref: str, output: Path) -> dict:
             ("toolkit-frozen-install", ["bun", "install", "--frozen-lockfile"], road),
             ("adapter-typecheck", ["bun", "x", "--no-install", "tsc", "--noEmit"], adapter),
             ("toolkit-typecheck", ["bun", "run", "check"], road),
-            ("native-runtime-toolkit-tests", ["bun", "test", "jev-experiments/packages/decision-runtime", road + "/runtime", road + "/routing", adapter + "/index.test.ts", "jev-experiments/gateway-accounting-2026-09-22/gateway.test.ts", "jev-experiments/gateway-accounting-2026-09-22/score.test.ts", "jev-experiments/gateway-accounting-2026-09-22/accounting.test.ts", "jev-experiments/gateway-accounting-2026-09-22/observer-usage.test.ts"], "."),
-            ("verifier-boundary-tests", ["python3", "-m", "unittest", "discover", "-s", "jev-experiments/typed-runtime-2026-09-22", "-p", "test_verify.py"], "."),
+            ("native-runtime-toolkit-tests", ["bun", "test", "packages/decision-runtime", road + "/runtime", road + "/routing", adapter + "/index.test.ts", "gateway-accounting-2026-09-22/gateway.test.ts", "gateway-accounting-2026-09-22/score.test.ts", "gateway-accounting-2026-09-22/accounting.test.ts", "gateway-accounting-2026-09-22/observer-usage.test.ts"], "."),
+            ("verifier-boundary-tests", ["python3", "-m", "unittest", "discover", "-s", "typed-runtime-2026-09-22", "-p", "test_verify.py"], "."),
             ("python-local-contract-tests", ["python3", "-m", "unittest", "discover", "-s", road + "/mac", "-p", "test_*.py"], "."),
             ("fresh-installed-cli-mcp", ["python3", road + "/routing/fresh_install.py", "--output", str(area / "installed.json")], "."),
         ]

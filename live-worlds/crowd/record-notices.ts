@@ -2,7 +2,7 @@
 // the app. Same world, seed and checkpoint as record.ts, so every notice meets the same twelve
 // residents in the same places; only the notice changes. Refuses to overwrite a recording.
 //
-//   bun jev-experiments/live-worlds/crowd/record-notices.ts
+//   bun live-worlds/crowd/record-notices.ts
 import { createHash } from "node:crypto";
 import { existsSync, writeFileSync } from "node:fs";
 import { evaluate } from "../../experience-prototypes/scripts/local-model";

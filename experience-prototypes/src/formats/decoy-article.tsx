@@ -10,7 +10,7 @@ import { Cite } from "./cite";
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const pts = (x: number) => Math.round(x * 100);
-const STUDY = "https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/packages/arena/prose";
+const STUDY = "https://github.com/nikhil-vytla/jev-experiments/tree/main/packages/arena/prose";
 
 export function DecoyArticle() {
   const d = prose.decoy;

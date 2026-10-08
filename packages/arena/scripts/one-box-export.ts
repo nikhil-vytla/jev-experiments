@@ -3,7 +3,7 @@
  * shape, and every distinct normalized prefix of all 200 phrases (whole characters, two or
  * more), the same keys Jev's recording uses. Output goes to .cache/one-box/ (gitignored).
  *
- *   bun jev-experiments/packages/arena/scripts/one-box-export.ts
+ *   bun packages/arena/scripts/one-box-export.ts
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { phrasesSchema } from "../src/one-box/phrases";

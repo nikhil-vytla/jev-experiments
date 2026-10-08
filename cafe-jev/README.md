@@ -47,9 +47,9 @@ These are authored development fixtures with one direct wording per finite state
 From the repository root:
 
 ```sh
-bun test jev-experiments/cafe-jev/engine.test.ts jev-experiments/cafe-jev/evidence.test.ts
-bun run jev-experiments/cafe-jev/record.ts
-bun run jev-experiments/cafe-jev/summarize.ts
+bun test cafe-jev/engine.test.ts cafe-jev/evidence.test.ts
+bun run cafe-jev/record.ts
+bun run cafe-jev/summarize.ts
 ```
 
 The recording script uses the existing local credential loader. It checkpoints each completed batch, retains provider failures and resumes only missing cases. Long `Retry-After` values receive a bounded wait with at most three outer retries per batch. A later invocation retries remaining gaps. Run the summarizer only after the recorder finishes; it derives scores from preserved answers and never substitutes corrected model output.

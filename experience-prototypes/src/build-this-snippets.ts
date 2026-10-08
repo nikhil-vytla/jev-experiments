@@ -224,7 +224,7 @@ export type CliStudy = "fool" | "suggestion" | "decoy";
 
 export function cliSnippet(study: CliStudy): string {
   return [
-    "# From jev-experiments/ in this repository. --dry-run prints the requests and the",
+    "# From the repository root. --dry-run prints the requests and the",
     "# worst-case cost without sending anything; drop it to run on your key.",
     `bun tools/decide-cli/cli.ts eval ${study} --endpoint jev --dry-run`,
     `AI_GATEWAY_API_KEY=… bun tools/decide-cli/cli.ts eval ${study} --endpoint jev --max-usd 0.05 --out ${study}.jsonl`,

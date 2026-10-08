@@ -12,8 +12,8 @@ roadmap/mac/jev_local.py's Runtime, loaded once and warm, as in record-one-box-l
 Rows use the gateway's wire format so src/decide/combine.ts reads them like Jev's. Append-only
 and resumable.
 
-  bun jev-experiments/packages/arena/scripts/decide-export.ts
-  jev-experiments/.venv/bin/python jev-experiments/packages/arena/scripts/record-decide-laya.py
+  bun packages/arena/scripts/decide-export.ts
+  .venv/bin/python packages/arena/scripts/record-decide-laya.py
 """
 import importlib.util
 import json
@@ -21,7 +21,7 @@ from pathlib import Path
 import sys
 import time
 
-ROOT = Path(__file__).resolve().parents[3]  # jev-experiments
+ROOT = Path(__file__).resolve().parents[3]  # the repository root
 OUT = ROOT / 'packages/arena/recordings/decide.laya.jsonl'
 MODEL = 'laya-readout-experimental'
 

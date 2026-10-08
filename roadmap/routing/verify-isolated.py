@@ -12,7 +12,7 @@ import time
 
 HERE = Path(__file__).resolve().parent
 ROADMAP = HERE.parent
-ROOT = ROADMAP.parents[1]
+ROOT = ROADMAP.parent
 APP_FILES = {"ModelRoutingLab.tsx", "evidence-links.ts", "web-handler.ts"}
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--base", default="HEAD", help="Git base to archive before overlaying authored runtime/router files")
@@ -51,21 +51,22 @@ with tempfile.TemporaryDirectory(prefix="jev-routing-isolated-") as temporary:
             copy_source(source, destination / source.relative_to(ROOT))
     for source in (ROADMAP / "package.json", ROADMAP / "bun.lock", ROADMAP / "mac/models.json"):
         copy_source(source, destination / source.relative_to(ROOT))
-    lab = destination / "jev-experiments/roadmap"
+    lab = destination / "roadmap"
     (lab / "tsconfig.json").write_text(json.dumps({
         "compilerOptions": {"target": "ES2022", "module": "ESNext", "moduleResolution": "bundler",
                             "lib": ["ES2022", "DOM", "DOM.Iterable"], "strict": True, "skipLibCheck": True,
                             "noEmit": True, "allowImportingTsExtensions": True, "types": ["bun"]},
         "include": ["runtime/**/*.ts", "routing/**/*.ts"],
     }, indent=2) + "\n")
+    # The retained patch still names hatch-era a/jev-experiments/ paths; -p2 strips that prefix.
     commands = [
-        (["git", "apply", "--check", "jev-experiments/roadmap/runtime/existing-contracts.patch"], "."),
-        (["git", "apply", "jev-experiments/roadmap/runtime/existing-contracts.patch"], "."),
-        (["bun", "install", "--frozen-lockfile"], "jev-experiments/adapters/typescript"),
-        (["bun", "install", "--frozen-lockfile"], "jev-experiments/roadmap"),
-        (["bun", "test", "jev-experiments/roadmap/runtime", "jev-experiments/roadmap/routing"], "."),
-        (["bun", "x", "--no-install", "tsc", "--noEmit", "-p", "tsconfig.json"], "jev-experiments/roadmap"),
-        (["python3", "jev-experiments/roadmap/routing/fresh_install.py"], "."),
+        (["git", "apply", "-p2", "--check", "roadmap/runtime/existing-contracts.patch"], "."),
+        (["git", "apply", "-p2", "roadmap/runtime/existing-contracts.patch"], "."),
+        (["bun", "install", "--frozen-lockfile"], "adapters/typescript"),
+        (["bun", "install", "--frozen-lockfile"], "roadmap"),
+        (["bun", "test", "roadmap/runtime", "roadmap/routing"], "."),
+        (["bun", "x", "--no-install", "tsc", "--noEmit", "-p", "tsconfig.json"], "roadmap"),
+        (["python3", "roadmap/routing/fresh_install.py"], "."),
     ]
     for command, cwd in commands:
         start = time.perf_counter()

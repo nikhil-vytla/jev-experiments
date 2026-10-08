@@ -23,13 +23,13 @@ This is an adapted Jev evaluation, not an official leaderboard submission. It us
 From the repository root, with Bun and a Python environment available:
 
 ```sh
-uv venv jev-experiments/.venv
-uv pip install --python jev-experiments/.venv/bin/python pyarrow==25.0.1 numpy pandas
-bun jev-experiments/rewardbench2/prepare.ts
-bun test jev-experiments/rewardbench2
-bun jev-experiments/rewardbench2/run.ts
-bun jev-experiments/rewardbench2/validate.ts
-jev-experiments/.venv/bin/python jev-experiments/rewardbench2/verify-upstream.py
+uv venv .venv
+uv pip install --python .venv/bin/python pyarrow==25.0.1 numpy pandas
+bun rewardbench2/prepare.ts
+bun test rewardbench2
+bun rewardbench2/run.ts
+bun rewardbench2/validate.ts
+.venv/bin/python rewardbench2/verify-upstream.py
 ```
 
 Skip environment creation when using the lab's existing `.venv`. `RB2_PYTHON` can select another interpreter. The runner loads `AI_GATEWAY_API_KEY` from the process environment or the existing local credential helper. It never writes the key to result files. `RB2_LIMIT` makes a first-N integration run and labels it accordingly; omit it for the full benchmark.

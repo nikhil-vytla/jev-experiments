@@ -17,7 +17,7 @@ The separate [isolated check](isolated-check.json) archives Git base `d2c8ff30e9
 Run that provider-free check from the repository root:
 
 ```sh
-python3 jev-experiments/roadmap/routing/verify-isolated.py
+python3 roadmap/routing/verify-isolated.py
 ```
 
 It writes a new local check report, records copied-source hashes and removes its temporary archive. It neither creates a branch nor commits code. Select a clean pre-runtime base with `--base` when the current Git HEAD already contains the runtime patch.

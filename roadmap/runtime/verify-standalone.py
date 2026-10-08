@@ -9,7 +9,7 @@ import tempfile
 import time
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
+ROOT = HERE.parents[1]
 patch = HERE / 'existing-contracts.patch'
 rows = []
 with tempfile.TemporaryDirectory(prefix='jev-contract-check-') as directory:
@@ -19,13 +19,14 @@ with tempfile.TemporaryDirectory(prefix='jev-contract-check-') as directory:
         archive.seek(0)
         with tarfile.open(fileobj=archive) as source:
             source.extractall(destination, filter='data')
-    shutil.copytree(HERE, destination / 'jev-experiments/roadmap/runtime', dirs_exist_ok=True,
+    shutil.copytree(HERE, destination / 'roadmap/runtime', dirs_exist_ok=True,
                     ignore=shutil.ignore_patterns('__pycache__', '*.local.*'))
+    # The retained patch still names hatch-era a/jev-experiments/ paths; -p2 strips that prefix.
     commands = [
-        (['git', 'apply', '--check', 'jev-experiments/roadmap/runtime/existing-contracts.patch'], '.'),
-        (['git', 'apply', 'jev-experiments/roadmap/runtime/existing-contracts.patch'], '.'),
-        (['bun', 'install', '--frozen-lockfile'], 'jev-experiments/adapters/typescript'),
-        (['bun', 'test', 'jev-experiments/roadmap/runtime'], '.'),
+        (['git', 'apply', '-p2', '--check', 'roadmap/runtime/existing-contracts.patch'], '.'),
+        (['git', 'apply', '-p2', 'roadmap/runtime/existing-contracts.patch'], '.'),
+        (['bun', 'install', '--frozen-lockfile'], 'adapters/typescript'),
+        (['bun', 'test', 'roadmap/runtime'], '.'),
     ]
     for command, cwd in commands:
         start = time.perf_counter()

@@ -4,16 +4,11 @@ name: Jev site
 # workflows (Jev scene lifetimes, Jev playground, Jev portable evidence), each installing and
 # building the site again before its own tests.
 
+# Every path the repository holds can feed the site or its checks, so there is no paths filter.
 on:
   pull_request:
-    paths:
-      - "jev-experiments/**"
-      - ".github/workflows/jev-site.yml"
   push:
     branches: [main]
-    paths:
-      - "jev-experiments/**"
-      - ".github/workflows/jev-site.yml"
 
 permissions:
   contents: read
@@ -28,37 +23,37 @@ jobs:
         with:
           bun-version: "1.3.14"
       - name: Install from the canonical lockfile
-        working-directory: jev-experiments/experience-prototypes
+        working-directory: experience-prototypes
         run: bun install --frozen-lockfile
       - name: Build the committed candidate from committed inputs and bind source-view revisions
-        working-directory: jev-experiments/experience-prototypes
+        working-directory: experience-prototypes
         env:
           VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
         run: bun run build
 
       # Formerly Jev scene lifetimes
       - name: Verify request, timer and media lifetimes
-        run: bun test jev-experiments/scene-lifetimes-2026-09-22 jev-experiments/rewardbench2/publication-source.test.ts jev-experiments/rewardbench2/publication.test.ts
+        run: bun test scene-lifetimes-2026-09-22 rewardbench2/publication-source.test.ts rewardbench2/publication.test.ts
       - name: Arena models and recordings
-        run: bun test jev-experiments/packages/arena
+        run: bun test packages/arena
       - name: Live worlds
-        run: bun test jev-experiments/live-worlds
+        run: bun test live-worlds
       - name: jev-lab CLI
-        run: bun test jev-experiments/tools/decide-cli
+        run: bun test tools/decide-cli
       - name: Catalog links and app units
-        run: bun test jev-experiments/experience-prototypes/src
+        run: bun test experience-prototypes/src
 
       # Formerly Jev playground
       - name: Verify source controls, note figures and metadata
-        run: bun test jev-experiments/release-implementation-2026-09-22/source-code/source.test.ts jev-experiments/release-implementation-2026-09-22/source-revision/revision.test.ts jev-experiments/release-implementation-2026-09-22/notes jev-experiments/music-arranger-v2/engine.test.ts
+        run: bun test release-implementation-2026-09-22/source-code/source.test.ts release-implementation-2026-09-22/source-revision/revision.test.ts release-implementation-2026-09-22/notes music-arranger-v2/engine.test.ts
 
       # Formerly Jev portable evidence
       - name: Verify portable records, indexes and publication projections
-        run: bun test jev-experiments/roadmap/integration/portable-records.test.ts jev-experiments/roadmap/integration/portable-clients.test.ts jev-experiments/roadmap/integration/portable-publication.test.ts jev-experiments/roadmap/integration/publication-projection.test.ts
+        run: bun test roadmap/integration/portable-records.test.ts roadmap/integration/portable-clients.test.ts roadmap/integration/portable-publication.test.ts roadmap/integration/publication-projection.test.ts
       - name: Rebuild the archive evidence index
-        run: python3 jev-experiments/roadmap/integration/evidence_index.py
+        run: python3 roadmap/integration/evidence_index.py
 
       - name: Verify public record integrity
-        run: bun run jev-experiments/roadmap/verification/publication.ts
+        run: bun run roadmap/verification/publication.ts
       - name: Keep committed evidence, indexes and source unchanged
         run: git diff --exit-code

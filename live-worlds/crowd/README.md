@@ -35,10 +35,10 @@ One authored quiet-reading invitation was sent as **one actual HTTP 200 batch wi
 Run from the repository root:
 
 ```sh
-bun jev-experiments/live-worlds/prepare.ts
-bun test jev-experiments/live-worlds/crowd/engine.test.ts
-bun jev-experiments/live-worlds/crowd/verify-evidence.ts
-cd jev-experiments/experience-prototypes
+bun live-worlds/prepare.ts
+bun test live-worlds/crowd/engine.test.ts
+bun live-worlds/crowd/verify-evidence.ts
+cd experience-prototypes
 bunx tsc --noEmit
 ```
 

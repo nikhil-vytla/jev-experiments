@@ -10,7 +10,7 @@ The supplied release plan is the authority for this map. It explicitly includes 
 
 - Publish the exact footnote "Not affiliated with or endorsed by TypeSafe AI". Credit original builders next to adaptations, distinguish model authors from playground authors, and retain design research with visual and styling artifacts.
 - Backward compatibility is not a release goal. Refactor structure and replace weak interactions when that produces a more coherent, useful, well-crafted result.
-- Keep Bun and the existing Vercel project and URL. Its root stays `jev-experiments/experience-prototypes`. Keep parent source access and committed JSONL inputs available to clean builds.
+- Keep Bun and the existing Vercel project and URL. Its Root Directory is `experience-prototypes`. Keep outside-root source access and committed JSONL inputs available to clean builds.
 - Keep unfinished entry experiences out of the public catalog. Historical research remains labeled with its original protocol.
 - Separate classification, hard eligibility, preference selection, execution and outcomes. No fallback widens permissions, capabilities, context or explicit spending limits.
 - Use one typed-decision contract across hosted, local and heuristic conditions. Classifier comparisons use the same selection policy. Delegation occurs at a bounded task boundary; the calling client owns edits and tool execution.

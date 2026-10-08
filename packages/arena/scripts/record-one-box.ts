@@ -15,7 +15,7 @@
  * The log is append-only. Rerunning resumes: prefixes already recorded are skipped, never
  * re-asked or overwritten.
  *
- *   bun jev-experiments/packages/arena/scripts/record-one-box.ts [words|all] [phrases.json] [log.jsonl] [--dry-run]
+ *   bun packages/arena/scripts/record-one-box.ts [words|all] [phrases.json] [log.jsonl] [--dry-run]
  *
  * `words` asks only prefixes that end a word (about 1,300 requests); `all` asks every prefix
  * (about 5,500). Upstream's cancel-on-keystroke policy only ever lands word-end prefixes and

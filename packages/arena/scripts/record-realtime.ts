@@ -9,8 +9,8 @@
  * piece are dropped at once, and a failed request is re-asked 400 ms later.
  * Weak answers are never retried. Refuses to overwrite an existing recording.
  *
- *   bun jev-experiments/packages/arena/scripts/record-realtime.ts        # run 1
- *   bun jev-experiments/packages/arena/scripts/record-realtime.ts 2      # run 2
+ *   bun packages/arena/scripts/record-realtime.ts        # run 1
+ *   bun packages/arena/scripts/record-realtime.ts 2      # run 2
  *
  * Run 1 re-asked failures after a fixed 400 ms. Run 2 backs off (0.4 → 4 s,
  * resetting after a success) and adds "remember only confident judgements".

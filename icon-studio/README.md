@@ -26,8 +26,8 @@ The app route is `#experiment/icon-studio`. Saved contexts work without a key. A
 Run from the repository root:
 
 ```sh
-bun jev-experiments/icon-studio/verify.ts
-bun test jev-experiments/icon-studio/protocol.test.ts
+bun icon-studio/verify.ts
+bun test icon-studio/protocol.test.ts
 ```
 
 The verifier reconstructs every request and published winner. Browser checks covered saved selections, pins surviving a context switch, manual selection, stroke controls, missing-key feedback and dark mode at 390 px without horizontal overflow. A full app build and its 104 tests also passed. A separate browser check delayed a synthetic response by 1.5 seconds: editing the label cancelled the tournament, preserved the new input and prevented a stale selection.

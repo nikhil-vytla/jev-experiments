@@ -128,7 +128,7 @@ export function SentryData() {
       </ul>
       <p>
         No Jev answer trains anything: TypeSafe's terms forbid it. Everything, including Jev's raw recorded answers, is in{" "}
-        <a href="https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/live-worlds/sentry" target="_blank" rel="noreferrer">
+        <a href="https://github.com/nikhil-vytla/jev-experiments/tree/main/live-worlds/sentry" target="_blank" rel="noreferrer">
           live-worlds/sentry
         </a>
         .

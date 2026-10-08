@@ -70,7 +70,7 @@ Files for run 2: `realtime-2.replay.json` and `realtime-2.jsonl.gz`. Every game 
 
 Files: `realtime.replay.json` (every decision with world send and arrival times; replays exactly) and `realtime.jsonl.gz` (every request and reply).
 
-Record new runs with `bun jev-experiments/packages/arena/scripts/record-framings.ts` or `record-realtime.ts` after moving these files; the recorders refuse to overwrite them.
+Record new runs with `bun packages/arena/scripts/record-framings.ts` or `record-realtime.ts` after moving these files; the recorders refuse to overwrite them.
 
 ## Which Jev answered
 

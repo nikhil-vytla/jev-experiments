@@ -4,7 +4,7 @@
  * FACTS_THRESHOLD or above are kept. Local and free. DETR was trained on COCO train2017; these
  * images are from val2017, which it never trained on.
  *
- *   cd jev-experiments/experience-prototypes && bun scripts/count-detect.ts --cache DIR
+ *   cd experience-prototypes && bun scripts/count-detect.ts --cache DIR
  */
 import { pipeline, RawImage } from "@huggingface/transformers";
 import { appendFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";

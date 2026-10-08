@@ -492,13 +492,13 @@ export const retired: Record<string, Retired> = {
     title: "Typed schema adapters",
     reason: "One recorded call and a static code sample.",
     record: "adapters",
-    instead: { href: "https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/adapters", label: "The adapters' source" },
+    instead: { href: "https://github.com/nikhil-vytla/jev-experiments/tree/main/adapters", label: "The adapters' source" },
   },
   "benchmark-atlas": {
     title: "The next experiments",
     reason: "A list of plans, several of them since built; the roadmap keeps it current.",
     record: "research-map",
-    instead: { href: "https://github.com/nikhil-vytla/hatch/blob/main/jev-experiments/roadmap/MAP.md", label: "The roadmap" },
+    instead: { href: "https://github.com/nikhil-vytla/jev-experiments/blob/main/roadmap/MAP.md", label: "The roadmap" },
   },
   journeys: {
     title: "Adaptive forms",

@@ -2,7 +2,7 @@
  * Feasibility pilot, run before the protocol was frozen: does the gateway accept a plain-string
  * state and an empty-object state? Two requests, excluded from every analysis.
  *
- *   bun jev-experiments/packages/arena/prose/pilot.ts
+ *   bun packages/arena/prose/pilot.ts
  */
 import "../../../experience-prototypes/scripts/credentials";
 import { appendFileSync } from "node:fs";

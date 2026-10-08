@@ -11,11 +11,11 @@ The build also uses a pinned display projection for four benchmark candidate tex
 An exact archive of source commit `9eb695e1ad97949c91ed0600a32827c6dd25ffe7` passes frozen Bun installation, the production build, and **19 tests with 91 assertions**. No prepared public assets or working-tree changes were overlaid. The detached-video regression fails against canonical main with the expected missing pause and passes with the correction. [Command record and source hashes](verification.json).
 
 ```sh
-cd jev-experiments/experience-prototypes
+cd experience-prototypes
 bun install --frozen-lockfile
 bun run build
 cd ../..
-bun test jev-experiments/scene-lifetimes-2026-09-22
+bun test scene-lifetimes-2026-09-22
 ```
 
 Sixteen tests execute maintained component callbacks with controlled requests, refs and timers. Three projection tests check reordered options, idempotence, changed/ambiguous inputs, and preservation of every other field in the real benchmark document. Callback tests do not reproduce React's full scheduler, browser media playback, or physical devices. Broader development-browser evidence belongs to its separate integrated source condition.

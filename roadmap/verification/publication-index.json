@@ -477,8 +477,8 @@
       "how": "copy",
       "gzip": false,
       "files": 5,
-      "bytes": 43145,
-      "sha256": "e5c865980d4e913411b730cab1a497dd705011131ccddb7f5877c1b13b08acf8"
+      "bytes": 43394,
+      "sha256": "e728a633df0bf38ee559d2dbafacf153c7740c40949cf878191cbc5c04e21b6b"
     },
     {
       "name": "quality-review",
@@ -534,8 +534,8 @@
       "how": "committed",
       "gzip": false,
       "files": 1,
-      "bytes": 1178,
-      "sha256": "5df2c137b0409b782decc712fc8683989220a3fecf6ee1799aae8d2922ad8f1c"
+      "bytes": 1172,
+      "sha256": "0e6440ee1bbb618d8deb867ad576b2fb4f6dc20c724e494ee2d03b02ec9375e0"
     },
     {
       "name": "favicon",

@@ -17,4 +17,4 @@ export function prepareJudgmentReliability(target: string) {
   copyFileSync(resolve(here, "manifest.json"), resolve(target, "manifest.json"));
   return { name: "judgment-reliability", result };
 }
-if (import.meta.main) { const document = prepareJudgmentReliability(resolve(process.argv[2] ?? "jev-experiments/experience-prototypes/public/judgment-reliability")); writeRecord(resolve(here, "results.jsonl"), document); console.log(JSON.stringify({ pairs: document.result.case_index.length, completed: document.result.availability.completed, target: process.argv[2] })); }
+if (import.meta.main) { const document = prepareJudgmentReliability(resolve(process.argv[2] ?? resolve(here, "../experience-prototypes/public/judgment-reliability"))); writeRecord(resolve(here, "results.jsonl"), document); console.log(JSON.stringify({ pairs: document.result.case_index.length, completed: document.result.availability.completed, target: process.argv[2] })); }

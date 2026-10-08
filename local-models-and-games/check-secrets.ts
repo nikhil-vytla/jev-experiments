@@ -1,7 +1,7 @@
 import "../experience-prototypes/scripts/credentials";
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
-const root = resolve(import.meta.dir, "../..");
+const root = resolve(import.meta.dir, "..");
 const key = process.env.AI_GATEWAY_API_KEY;
 if (!key)
   throw new Error(
@@ -14,8 +14,8 @@ for (const args of [
     "ls-files",
     "--others",
     "--exclude-standard",
-    "jev-experiments/local-models-and-games",
-    "jev-experiments/experience-prototypes/src",
+    "local-models-and-games",
+    "experience-prototypes/src",
   ],
 ]) {
   const p = Bun.spawnSync(["git", ...args], { cwd: root });
@@ -30,7 +30,7 @@ function visit(path: string) {
     else names.add(p);
   }
 }
-visit(resolve(root, "jev-experiments/experience-prototypes/dist"));
+visit(resolve(root, "experience-prototypes/dist"));
 let count = 0;
 for (const path of names) {
   if (!existsSync(path) || statSync(path).isDirectory()) continue;

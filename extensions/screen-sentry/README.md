@@ -6,10 +6,10 @@ It isn't published to the Chrome Web Store. Load it unpacked.
 
 ## Install (load unpacked)
 
-1. Build: `bun jev-experiments/extensions/screen-sentry/build.ts`. This writes `dist/`; a built copy is committed, so you can skip this step unless you change the code.
+1. Build: `bun extensions/screen-sentry/build.ts`. This writes `dist/`; a built copy is committed, so you can skip this step unless you change the code.
 2. Open `chrome://extensions` and turn on **Developer mode** (top right).
-3. Click **Load unpacked** and choose the `jev-experiments/extensions/screen-sentry/` folder.
-4. Open any page, or the trap page: `cd jev-experiments/extensions/screen-sentry/test-pages && python3 -m http.server 4721`, then visit http://127.0.0.1:4721/flights.html. Its reviews load two seconds late, with a trap inside, to show the rescan.
+3. Click **Load unpacked** and choose the `extensions/screen-sentry/` folder.
+4. Open any page, or the trap page: `cd extensions/screen-sentry/test-pages && python3 -m http.server 4721`, then visit http://127.0.0.1:4721/flights.html. Its reviews load two seconds late, with a trap inside, to show the rescan.
 5. Click the toolbar icon (pin it from the puzzle-piece menu) for the popup: what was flagged, an on/off toggle, and "Ask Jev".
 6. Optional: open the extension's **Options** and paste your own Vercel AI Gateway key to use "Ask Jev".
 

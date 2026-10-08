@@ -1,6 +1,6 @@
 # Who said that? for the Mac menu bar (prototype tool)
 
-This menu-bar app records a room on your Mac and writes a transcript sorted into conversations and speakers. It runs the same logic as the website's "Who said that?" scene (`jev-experiments/live-worlds/who-said-that/`), through Bun on this Mac:
+This menu-bar app records a room on your Mac and writes a transcript sorted into conversations and speakers. It runs the same logic as the website's "Who said that?" scene (`live-worlds/who-said-that/`), through Bun on this Mac:
 - whisper-tiny.en, all-MiniLM-L6-v2 and Wespeaker CAM++ for the signals
 - the free typed decisions for speaker, conversation and topic
 
@@ -11,7 +11,7 @@ Nothing is uploaded.
 You need macOS 14+, the Xcode command-line tools (`swiftc`) and Bun.
 
 ```sh
-cd jev-experiments/experience-prototypes && bun install --frozen-lockfile   # once, for the pipeline
+cd experience-prototypes && bun install --frozen-lockfile   # once, for the pipeline
 ../apps/who-said-that-mac/build.sh                                         # → build/WhoSaidThat.app
 open ../apps/who-said-that-mac/build/WhoSaidThat.app
 ```

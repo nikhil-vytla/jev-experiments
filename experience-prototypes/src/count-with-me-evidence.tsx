@@ -206,7 +206,7 @@ export function CountDataNote() {
   return (
     <>
       <p>
-        <a href="https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/live-worlds/count" target="_blank" rel="noreferrer">
+        <a href="https://github.com/nikhil-vytla/jev-experiments/tree/main/live-worlds/count" target="_blank" rel="noreferrer">
           live-worlds/count
         </a>{" "}
         holds the image list with every truth box, the selection script, the recorders and every recorded answer.

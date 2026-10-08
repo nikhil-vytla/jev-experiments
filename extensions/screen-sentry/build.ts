@@ -1,6 +1,6 @@
 /**
  * Bundles the extension's scripts into dist/ (the classifier and its weights go into
- * content.js). Run from anywhere:  bun jev-experiments/extensions/screen-sentry/build.ts
+ * content.js). Run from anywhere:  bun extensions/screen-sentry/build.ts
  */
 const root = new URL(".", import.meta.url).pathname;
 

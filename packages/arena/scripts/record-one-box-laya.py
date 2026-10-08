@@ -19,8 +19,8 @@ Output rows use the gateway's wire format so src/one-box/adapter.ts parses them.
 the wall time of both requests, warm. The log is append-only and resumable; the machine,
 versions and model revision go to one-box.laya.meta.json.
 
-  bun jev-experiments/packages/arena/scripts/one-box-export.ts
-  jev-experiments/.venv/bin/python jev-experiments/packages/arena/scripts/record-one-box-laya.py
+  bun packages/arena/scripts/one-box-export.ts
+  .venv/bin/python packages/arena/scripts/record-one-box-laya.py
 """
 import importlib.util
 import json
@@ -30,7 +30,7 @@ import subprocess
 import sys
 import time
 
-ROOT = Path(__file__).resolve().parents[3]  # jev-experiments
+ROOT = Path(__file__).resolve().parents[3]  # the repository root
 CACHE = ROOT / '.cache'
 OUT = ROOT / 'packages/arena/recordings/one-box.laya.jsonl'
 META = ROOT / 'packages/arena/recordings/one-box.laya.meta.json'

@@ -3,22 +3,22 @@ name: Jev typed runtime and tools
 on:
   pull_request:
     paths:
-      - "jev-experiments/packages/decision-runtime/**"
-      - "jev-experiments/roadmap/runtime/**"
-      - "jev-experiments/roadmap/routing/**"
-      - "jev-experiments/roadmap/mac/**"
-      - "jev-experiments/roadmap/tsconfig.json"
-      - "jev-experiments/typed-runtime-2026-09-22/**"
+      - "packages/decision-runtime/**"
+      - "roadmap/runtime/**"
+      - "roadmap/routing/**"
+      - "roadmap/mac/**"
+      - "roadmap/tsconfig.json"
+      - "typed-runtime-2026-09-22/**"
       - ".github/workflows/jev-typed-runtime.yml"
   push:
     branches: [main]
     paths:
-      - "jev-experiments/packages/decision-runtime/**"
-      - "jev-experiments/roadmap/runtime/**"
-      - "jev-experiments/roadmap/routing/**"
-      - "jev-experiments/roadmap/mac/**"
-      - "jev-experiments/roadmap/tsconfig.json"
-      - "jev-experiments/typed-runtime-2026-09-22/**"
+      - "packages/decision-runtime/**"
+      - "roadmap/runtime/**"
+      - "roadmap/routing/**"
+      - "roadmap/mac/**"
+      - "roadmap/tsconfig.json"
+      - "typed-runtime-2026-09-22/**"
       - ".github/workflows/jev-typed-runtime.yml"
 
 permissions:
@@ -35,5 +35,5 @@ jobs:
           bun-version: "1.3.14"
       - name: Verify exact archived source without providers or model inference
         run: >-
-          python3 jev-experiments/typed-runtime-2026-09-22/verify.py
+          python3 typed-runtime-2026-09-22/verify.py
           --ref "$GITHUB_SHA" --output "$RUNNER_TEMP/typed-runtime-checks"

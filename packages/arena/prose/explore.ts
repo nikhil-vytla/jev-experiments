@@ -3,7 +3,7 @@
  * headline numbers. Nothing here changes a pre-registered metric; the README marks every
  * number from this script as exploratory.
  *
- *   bun jev-experiments/packages/arena/prose/explore.ts
+ *   bun packages/arena/prose/explore.ts
  */
 import { loadRows } from "./analyze";
 import { pClaim, type Answers } from "./metrics";

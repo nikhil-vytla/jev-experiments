@@ -1,7 +1,7 @@
 /**
  * Scores every free decider against the hand-written gold sets (gold/), never against Jev.
  *
- *   cd jev-experiments/experience-prototypes
+ *   cd experience-prototypes
  *   bun live-worlds/free-model/evaluate.ts jobs OUT_DIR      # teacher jobs for the gold items
  *   teacher_fireworks.py OUT_DIR/gold-lines.jsonl OUT_DIR/labels-gold-lines.jsonl  (and gold-rumours)
  *   bun live-worlds/free-model/evaluate.ts score TEACHER_DIR [QWEN3_4B_DIR]  # results.json

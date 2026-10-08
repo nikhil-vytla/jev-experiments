@@ -8,7 +8,7 @@ Append-only log of what was tried and learned.
   did), the recordings README (position/batching robustness on Tetris spots: reversed order
   moved judgements 0.027 on average, one-at-a-time 0.049), the checkable README (Jev strong on
   reading/judging, weak on counting and route-finding; calibration error 0.010 on judgement
-  items) and the Banking77/CLINC robustness summary in `jev-experiments/README.md`.
+  items) and the Banking77/CLINC robustness summary in `README.md`.
 - Chose one question per request for every variant, so no variant sees another variant's
   wording. Batching variants would contaminate them.
 - Feasibility pilot (`pilot.ts`, 2 requests, excluded from analysis): the gateway accepts a

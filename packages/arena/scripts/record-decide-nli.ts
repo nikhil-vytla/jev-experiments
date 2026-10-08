@@ -2,7 +2,7 @@
  * Records the in-browser zero-shot classifier (src/decide/nli.ts) on Decide's deck, running
  * the same code and model the page runs live. Deterministic, so it simply overwrites.
  *
- *   bun jev-experiments/packages/arena/scripts/record-decide-nli.ts
+ *   bun packages/arena/scripts/record-decide-nli.ts
  */
 import { pipeline } from "@huggingface/transformers";
 import { writeFileSync } from "node:fs";

@@ -10,7 +10,7 @@
  *
  * The log is append-only; rerunning resumes and never re-asks a recorded item.
  *
- *   bun jev-experiments/packages/arena/scripts/record-checkable.ts [bank.json log] [--dry-run]
+ *   bun packages/arena/scripts/record-checkable.ts [bank.json log] [--dry-run]
  */
 import { readFileSync } from "node:fs";
 import { jevEndpoint } from "../../jev-client/src/endpoints";

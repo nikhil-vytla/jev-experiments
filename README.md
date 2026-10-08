@@ -2,6 +2,8 @@
 
 [Open the deployed laboratory](https://jev-experiments.vercel.app). It's a site of small experiments built on [Jev](https://docs.typesafe.ai/introduction), TypeSafe's typed decision model. Jev is text-only and returns choices, ordered scores and yes/no probabilities. It doesn't write a website, a caption or a paragraph. Those become possible when its decisions control another system, and that's the pattern here: Jev makes many bounded judgments while code does the rendering, simulation and bookkeeping.
 
+This repository moved out of [hatch](https://github.com/nikhil-vytla/hatch), where it lived at `jev-experiments/`, on 2026-10-07, with its history. Paths inside recorded evidence still name `jev-experiments/...`, as they were when recorded.
+
 ## What's on the site
 
 - **Home** leads with *Fool Jev* (add one sentence to change its mind) and the findings of the prose studies.
@@ -111,7 +113,7 @@ Typed adapter code lives under `adapters/`. Each compiler accepts a deliberate s
 
 ## Deployment and validation
 
-The production URL is [jev-experiments.vercel.app](https://jev-experiments.vercel.app), deployed from `experience-prototypes/` when `main` changes something under `jev-experiments/`. Replay is public. To run live, add your own Vercel AI Gateway API key in Settings. The playground holds the key only in page memory, clearing it on reload or disconnect. Requests pass through the app to Vercel AI Gateway with that key; deployed handlers never fall back to an environment key. Live inputs are not added to the published benchmark.
+The production URL is [jev-experiments.vercel.app](https://jev-experiments.vercel.app), deployed from `experience-prototypes/` when `main` changes something the build reads ([AGENTS.md](AGENTS.md) lists what it skips). Replay is public. To run live, add your own Vercel AI Gateway API key in Settings. The playground holds the key only in page memory, clearing it on reload or disconnect. Requests pass through the app to Vercel AI Gateway with that key; deployed handlers never fall back to an environment key. Live inputs are not added to the published benchmark.
 
 The function validates request sizes, supported types, and returned distributions. There is no shared server key. The visitor's gateway account handles its own billing and provider limits. Recorded evidence is stored in JSONL and reconstructed into ordinary JSON for the site and downloads, with a reviewed publication manifest.
 

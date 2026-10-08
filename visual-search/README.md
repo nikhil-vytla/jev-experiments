@@ -41,7 +41,7 @@ Live runs use only the visitor's in-memory gateway key through the existing /api
 
 ## Reproduction and integration
 
-Run from `jev-experiments/`:
+Run from the repository root:
 
 ```sh
 bun visual-search/prepare.ts                         # collect the archive (museum API only; no model calls)

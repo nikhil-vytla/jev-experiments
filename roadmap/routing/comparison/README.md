@@ -26,11 +26,11 @@ Full category distributions exist for hosted Jev and local Laya. Their held-out 
 To inspect or reproduce:
 
 ```sh
-bun jev-experiments/roadmap/routing/comparison/run.ts matrix
-bun jev-experiments/roadmap/routing/comparison/run.ts hosted
+bun roadmap/routing/comparison/run.ts matrix
+bun roadmap/routing/comparison/run.ts hosted
 # Coordinate the local GPU slot before this command:
-python3 jev-experiments/roadmap/routing/comparison/local_classify.py
-bun jev-experiments/roadmap/routing/comparison/run.ts replay
+python3 roadmap/routing/comparison/local_classify.py
+bun roadmap/routing/comparison/run.ts replay
 ```
 
 Matrix/classifier commands skip already recorded IDs. Preserve the original files when running a new condition. The local executable and model directory are explicit parameters in the script, pointing to the fresh-install test runtime. Source credentials come from the existing gateway credential loader and are never written into the evidence.

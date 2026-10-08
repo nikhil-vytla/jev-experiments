@@ -22,8 +22,8 @@ The [Mac adapter](../routing/mac-adapter.ts) supports string prompts and option 
 The [source-slice verification](../../typed-runtime-2026-09-22/README.md) describes exact archived checks. Run the focused tests after frozen application, roadmap and TypeScript-adapter installs:
 
 ```sh
-bun test jev-experiments/packages/decision-runtime jev-experiments/roadmap/runtime jev-experiments/roadmap/routing jev-experiments/adapters/typescript/index.test.ts
-python3 -m unittest discover -s jev-experiments/roadmap/mac -p 'test_*.py'
+bun test packages/decision-runtime roadmap/runtime roadmap/routing adapters/typescript/index.test.ts
+python3 -m unittest discover -s roadmap/mac -p 'test_*.py'
 ```
 
 The retained [original patch](existing-contracts.patch), [standalone verifier](verify-standalone.py) and [standalone report](standalone-check.json) describe version 1. Their hashes and outcomes remain unchanged. Use the source revision recorded in those artifacts to reproduce them; they do not verify this version 2 source.

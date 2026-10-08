@@ -131,8 +131,8 @@ test("the actual download helper saves raw UTF-8 bytes including BOM and line en
 });
 
 test("repository links encode paths and reject absolute or escaping paths", () => {
-  expect(repoSource("jev-experiments/source folder/a#b.ts")).toBe(
-    "https://github.com/nikhil-vytla/hatch/blob/main/jev-experiments/source%20folder/a%23b.ts",
+  expect(repoSource("lab/source folder/a#b.ts")).toBe(
+    "https://github.com/nikhil-vytla/jev-experiments/blob/main/lab/source%20folder/a%23b.ts",
   );
   for (const path of [
     "/absolute/file.ts",

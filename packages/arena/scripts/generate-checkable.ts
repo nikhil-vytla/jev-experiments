@@ -3,7 +3,7 @@
  * the Tetris items are kept from positions where some landing fills a row, so "fills a row"
  * is not almost always no. Refuses to overwrite a bank that has been recorded against.
  *
- *   bun jev-experiments/packages/arena/scripts/generate-checkable.ts [--force]
+ *   bun packages/arena/scripts/generate-checkable.ts [--force]
  */
 import { existsSync, writeFileSync } from "node:fs";
 import { gridItem } from "../src/checkable/grid";

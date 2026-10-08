@@ -59,9 +59,9 @@ No independent listening evaluation, audio discontinuity measurement or blind sc
 Run from the repository root after installing the app's dependencies with Bun:
 
 ```sh
-bun test jev-experiments/music-arranger-v2
-bun jev-experiments/music-arranger-v2/record.ts
-bun jev-experiments/music-arranger-v2/option-order.ts
+bun test music-arranger-v2
+bun music-arranger-v2/record.ts
+bun music-arranger-v2/option-order.ts
 ```
 
 The recording commands use the existing authorized local credential loader. They checkpoint each request and keep completed predictions. The first run encountered five upstream HTTP 400 responses on larger repeated-candidate requests; eliminating duplicate accompaniment allowed corrected requests to complete. The provider's error body was not exposed by the gateway, so the exact upstream limit is unknown. Original requests and failures remain in the record.

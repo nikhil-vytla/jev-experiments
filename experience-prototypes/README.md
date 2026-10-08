@@ -54,7 +54,7 @@ The SmolLM2 pilot (now inside Decision models on a Mac) has real parameter updat
 
 ## Run and deploy
 
-This folder is the application source for the `jev-experiments` Vercel project, deployed to https://jev-experiments.vercel.app when `main` changes something under `jev-experiments/`. The older `../web` folder is a previous implementation and isn't deployed.
+This folder is the application source for the `jev-experiments` Vercel project and its Root Directory. It deploys to https://jev-experiments.vercel.app when `main` changes something the build reads; `scripts/ignore-build.sh` lists the paths it skips.
 
 From this folder:
 
@@ -77,11 +77,11 @@ bun run deploy
 
 `bun run deploy` pins the existing Vercel project, builds the prepared evidence locally, and deploys production. Visitors supply their own gateway keys; deployment needs no model credentials.
 
-Preparation reconstructs the records listed in the publication manifest, including full benchmark inputs already embedded in the evidence. Local recovery/metric recomputation needs the parent lab's request logs, dataset cache, and Python environment. A fresh checkout can build and browse all evidence without that cache. Rerunning recovery still requires its original local request logs. Vercel uploads prepared `public/data`; it does not fetch repositories or run training during the build. `public/data`, dependencies, provider credentials, caches, and upstream checkouts are excluded from the commit.
+Preparation reconstructs the records listed in the publication manifest, including full benchmark inputs already embedded in the evidence. Local recovery/metric recomputation needs the repository root's request logs, dataset cache, and Python environment. A fresh checkout can build and browse all evidence without that cache. Rerunning recovery still requires its original local request logs. Vercel uploads prepared `public/data`; it does not fetch repositories or run training during the build. `public/data`, dependencies, provider credentials, caches, and upstream checkouts are excluded from the commit.
 
 ## Validation
 
-CI runs on every pull request that touches `jev-experiments/`:
+CI runs on every pull request:
 - TypeScript, `bun run lint:arena` and the production build
 - the app, arena and live-worlds Bun tests
 - the Python tests
@@ -89,4 +89,4 @@ CI runs on every pull request that touches `jev-experiments/`:
 
 Scene changes are also checked in headless Chromium at 1440 and 390 px against a local production preview.
 
-Sources and older study methods remain in the parent lab's `SOURCES.md` and `README.md`. This folder contains original prototype code, new decision records, derived recovery records, and investigation notes, not copies of downloaded repositories.
+Sources and older study methods remain in the repository root's `SOURCES.md` and `README.md`. This folder contains original prototype code, new decision records, derived recovery records, and investigation notes, not copies of downloaded repositories.

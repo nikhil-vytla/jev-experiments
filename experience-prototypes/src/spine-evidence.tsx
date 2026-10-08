@@ -21,7 +21,7 @@ export const rate = (s: Stat) => `${pct(s.mean)} (${Math.round(s.ci[0] * 100)}â€
 /** "0.46 (0.30 to 0.64)": the spine score with its interval. */
 export const score = (s: Stat) => `${sc(s.mean)} (${sc(s.ci[0])} to ${sc(s.ci[1])})`;
 
-const REPO = "https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/packages/arena/spine";
+const REPO = "https://github.com/nikhil-vytla/jev-experiments/tree/main/packages/arena/spine";
 
 export const source = (path: string, label = path) => (
   <a href={`${REPO}/${path}`} target="_blank" rel="noreferrer">

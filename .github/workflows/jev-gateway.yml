@@ -3,18 +3,18 @@ name: Jev native gateway
 on:
   pull_request:
     paths:
-      - "jev-experiments/experience-prototypes/server/**"
-      - "jev-experiments/packages/decision-runtime/**"
-      - "jev-experiments/roadmap/runtime/accounting.ts"
-      - "jev-experiments/gateway-accounting-2026-09-22/**"
+      - "experience-prototypes/server/**"
+      - "packages/decision-runtime/**"
+      - "roadmap/runtime/accounting.ts"
+      - "gateway-accounting-2026-09-22/**"
       - ".github/workflows/jev-gateway.yml"
   push:
     branches: [main]
     paths:
-      - "jev-experiments/experience-prototypes/server/**"
-      - "jev-experiments/packages/decision-runtime/**"
-      - "jev-experiments/roadmap/runtime/accounting.ts"
-      - "jev-experiments/gateway-accounting-2026-09-22/**"
+      - "experience-prototypes/server/**"
+      - "packages/decision-runtime/**"
+      - "roadmap/runtime/accounting.ts"
+      - "gateway-accounting-2026-09-22/**"
       - ".github/workflows/jev-gateway.yml"
 
 permissions:
@@ -30,21 +30,21 @@ jobs:
         with:
           bun-version: "1.3.14"
       - name: Install application
-        working-directory: jev-experiments/experience-prototypes
+        working-directory: experience-prototypes
         run: bun install --frozen-lockfile
       - name: Build application
-        working-directory: jev-experiments/experience-prototypes
+        working-directory: experience-prototypes
         run: bun run build
       - name: Install decoder test dependencies
-        working-directory: jev-experiments/adapters/typescript
+        working-directory: adapters/typescript
         run: bun install --frozen-lockfile
       - name: Verify native transport and accounting without provider calls
         run: >-
           bun test
-          jev-experiments/gateway-accounting-2026-09-22/gateway.test.ts
-          jev-experiments/gateway-accounting-2026-09-22/score.test.ts
-          jev-experiments/gateway-accounting-2026-09-22/accounting.test.ts
-          jev-experiments/gateway-accounting-2026-09-22/observer-usage.test.ts
-          jev-experiments/experience-prototypes/server/byok.test.ts
-          jev-experiments/experience-prototypes/server/gateway.test.ts
-          jev-experiments/roadmap/runtime/existing-contract.test.ts
+          gateway-accounting-2026-09-22/gateway.test.ts
+          gateway-accounting-2026-09-22/score.test.ts
+          gateway-accounting-2026-09-22/accounting.test.ts
+          gateway-accounting-2026-09-22/observer-usage.test.ts
+          experience-prototypes/server/byok.test.ts
+          experience-prototypes/server/gateway.test.ts
+          roadmap/runtime/existing-contract.test.ts

@@ -220,7 +220,7 @@ export function Decoy({ figure = false }: { figure?: boolean } = {}) {
         <p className="fine">
           In every scenario, A's share is higher next to A's decoy than next to B's: by 47 points on average (95%
           interval 38 to 56). The recorded study and its protocol are in{" "}
-          <a href="https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/packages/arena/prose" target="_blank" rel="noreferrer">
+          <a href="https://github.com/nikhil-vytla/jev-experiments/tree/main/packages/arena/prose" target="_blank" rel="noreferrer">
             the prose studies
           </a>
           .

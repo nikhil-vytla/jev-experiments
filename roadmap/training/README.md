@@ -11,30 +11,30 @@ Readout selection uses only macro validation negative log likelihood, two learni
 Run the study with the existing Apple Silicon environment, or install `requirements-training.txt` in a separate environment:
 
 ```sh
-PYTHON=jev-experiments/.venv/bin/python
-"$PYTHON" jev-experiments/roadmap/training/download_models.py
-"$PYTHON" jev-experiments/roadmap/training/prepare.py
-"$PYTHON" jev-experiments/roadmap/training/study.py baselines
-"$PYTHON" jev-experiments/roadmap/training/study.py extract --model laya
-"$PYTHON" jev-experiments/roadmap/training/study.py fit --model laya
-"$PYTHON" jev-experiments/roadmap/training/study.py frozen-baselines --model laya
-"$PYTHON" jev-experiments/roadmap/training/robustness.py --model laya
-"$PYTHON" jev-experiments/roadmap/training/export_coreml.py --model laya --seed 17 --precision float32
-"$PYTHON" jev-experiments/roadmap/training/verify_export_provenance.py --model laya
-"$PYTHON" jev-experiments/roadmap/training/measure_export_runtime.py --model laya
-"$PYTHON" jev-experiments/roadmap/training/export_decision_rows.py --model laya
+PYTHON=.venv/bin/python
+"$PYTHON" roadmap/training/download_models.py
+"$PYTHON" roadmap/training/prepare.py
+"$PYTHON" roadmap/training/study.py baselines
+"$PYTHON" roadmap/training/study.py extract --model laya
+"$PYTHON" roadmap/training/study.py fit --model laya
+"$PYTHON" roadmap/training/study.py frozen-baselines --model laya
+"$PYTHON" roadmap/training/robustness.py --model laya
+"$PYTHON" roadmap/training/export_coreml.py --model laya --seed 17 --precision float32
+"$PYTHON" roadmap/training/verify_export_provenance.py --model laya
+"$PYTHON" roadmap/training/measure_export_runtime.py --model laya
+"$PYTHON" roadmap/training/export_decision_rows.py --model laya
 ```
 
-Repeat the model commands for `smol` and `qwen`. `download_models.py` populates the pinned local cache layout shared with the earlier Apple study; existing mismatched files are rejected, and `--verify-only` forbids downloads. [models-manifest.json](models-manifest.json) records every used file checksum. Corpus preparation downloads only revision-pinned dataset files into `jev-experiments/.cache/typed-study-v1`. Model weights, features and full source-text predictions stay in the ignored cache. Committed files contain new code, protocols, hashes, small learned readouts and evidence with source text omitted.
+Repeat the model commands for `smol` and `qwen`. `download_models.py` populates the pinned local cache layout shared with the earlier Apple study; existing mismatched files are rejected, and `--verify-only` forbids downloads. [models-manifest.json](models-manifest.json) records every used file checksum. Corpus preparation downloads only revision-pinned dataset files into `.cache/typed-study-v1`. Model weights, features and full source-text predictions stay in the ignored cache. Committed files contain new code, protocols, hashes, small learned readouts and evidence with source text omitted.
 
 After all three models have complete evidence, the default and package checks are separate steps:
 
 ```sh
-"$PYTHON" jev-experiments/roadmap/training/publish.py
-"$PYTHON" jev-experiments/roadmap/training/select_default.py
-"$PYTHON" jev-experiments/roadmap/mac/verify_default_package.py --model-source /path/to/verified/laya-readout-experimental
-"$PYTHON" jev-experiments/roadmap/training/promote_default.py
-"$PYTHON" jev-experiments/roadmap/training/publish.py
+"$PYTHON" roadmap/training/publish.py
+"$PYTHON" roadmap/training/select_default.py
+"$PYTHON" roadmap/mac/verify_default_package.py --model-source /path/to/verified/laya-readout-experimental
+"$PYTHON" roadmap/training/promote_default.py
+"$PYTHON" roadmap/training/publish.py
 ```
 
 The selector uses the predefined seed17 export's validation metrics, never the best repeated seed or test scores. Package verification installs the proposed registry into a fresh toolkit, rechecks the previously downloaded model files in an empty model directory, verifies the installed source bytes and credits, and runs the authored first-action example with networking blocked. Promotion refuses changed sources or evidence. Selection alone never changes the installed default; the package path currently supports the Laya readout candidate.
@@ -54,7 +54,7 @@ All three have 100% validation argmax agreement. The [default-selection record](
 Ten provider-free study/selection checks cover ordinal mapping, probability metrics/coverage, candidate gold identity, state-blind priors, complete transfer inclusion, validation-only default selection and source-text-free comparison exports:
 
 ```sh
-python3 -m unittest discover -s jev-experiments/roadmap/training -p 'test_*.py'
+python3 -m unittest discover -s roadmap/training -p 'test_*.py'
 ```
 
 Current baseline evidence is in [baseline-results.json](baseline-results.json). The state-blind and lexical conditions have held-out macro NLL 1.5402 and 1.4001 respectively. Model-specific results, when present, explicitly distinguish trained readouts, exports, robustness checks and release gates.

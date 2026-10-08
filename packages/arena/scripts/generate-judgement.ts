@@ -3,7 +3,7 @@
  * Order items are kept so that about half meet every request and half break exactly one.
  * Refuses to overwrite a bank that has been recorded against.
  *
- *   bun jev-experiments/packages/arena/scripts/generate-judgement.ts [--force]
+ *   bun packages/arena/scripts/generate-judgement.ts [--force]
  */
 import { existsSync, writeFileSync } from "node:fs";
 import type { Bank, Item } from "../src/checkable/items";

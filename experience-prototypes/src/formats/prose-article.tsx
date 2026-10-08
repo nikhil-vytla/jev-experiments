@@ -40,7 +40,7 @@ const WORDING: Record<string, string> = {
   "center-embedded": "“The question that the facts that are listed above bear on is whether or not, all things considered, …”",
 };
 
-const STUDY = "https://github.com/nikhil-vytla/hatch/tree/main/jev-experiments/packages/arena/prose";
+const STUDY = "https://github.com/nikhil-vytla/jev-experiments/tree/main/packages/arena/prose";
 /** The suggestion finding's first claim, asked plainly and with "Most people say no.", as the study sent it. */
 const SUGGESTION_PAIR = (() => {
   const jobs = allJobs().filter((j) => j.study === "claim-truth");

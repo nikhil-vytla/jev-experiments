@@ -138,7 +138,7 @@ export function RoutingNote() {
         className="note-code"
         source={{
           text: routingSource,
-          path: "jev-experiments/roadmap/routing/policy.ts",
+          path: "roadmap/routing/policy.ts",
         }}
         title="Where task traits can affect the quality estimate"
         markers={{
@@ -182,7 +182,7 @@ export function RoutingNote() {
         <p>
           <a
             href={repoSource(
-              "jev-experiments/roadmap/routing/comparison/PROTOCOL.md",
+              "roadmap/routing/comparison/PROTOCOL.md",
             )}
           >
             Frozen protocol and dated amendments
@@ -190,7 +190,7 @@ export function RoutingNote() {
           ·{" "}
           <a
             href={repoSource(
-              "jev-experiments/roadmap/routing/comparison/report.json",
+              "roadmap/routing/comparison/report.json",
             )}
           >
             Machine-readable result
@@ -198,7 +198,7 @@ export function RoutingNote() {
           ·{" "}
           <a
             href={repoSource(
-              "jev-experiments/roadmap/routing/comparison/calibrated-registry.json",
+              "roadmap/routing/comparison/calibrated-registry.json",
             )}
           >
             Calibrated registry

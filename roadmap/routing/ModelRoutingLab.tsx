@@ -400,13 +400,13 @@ export function ModelRoutingLab() {
           <summary>Use the CLI or connect your coding tool</summary>
           <p>
             From a{" "}
-            <a href="https://github.com/nikhil-vytla/hatch">
+            <a href="https://github.com/nikhil-vytla/jev-experiments">
               repository checkout
             </a>{" "}
             containing this release, install with Bun:
           </p>
           <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>
-            sh jev-experiments/roadmap/routing/install.sh
+            sh roadmap/routing/install.sh
           </pre>
           <p>
             Run <code>jev doctor</code> from the printed bin directory.

@@ -37,8 +37,8 @@ Checkpoints occur every 200ms and at request, resolution, cancellation and contr
 Run from the repository root:
 
 ```sh
-bun test jev-experiments/live-worlds/tetris jev-experiments/packages/arena/src/tetris-engine.test.ts
-bun jev-experiments/live-worlds/tetris/local-smoke.ts
+bun test live-worlds/tetris packages/arena/src/tetris-engine.test.ts
+bun live-worlds/tetris/local-smoke.ts
 ```
 
 Twenty-seven tests pass with 298 assertions. They cover seeded determinism, reachable routes, four-line clearing and level progression, hold, top-out, finite lock resets, gravity during pending requests, elapsed-time retention, independent lane invalidation, stale piece/age rejection, same-state takeover, scrub/fork cancellation, old-run restoration, matched midgame comparison, provider failure, same-tick evidence consistency, immutable complete request/reply receipts and historical evidence filtering. The fallback tests cover replies within the wait, absent replies, immediate fallback, new-piece request gaps, exact restored piece ages, preserved plans and the explicit local preset. The final app TypeScript check passes.

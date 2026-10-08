@@ -8,7 +8,7 @@
  * Hard budget: stops before the cumulative reported cost would pass $1.00 or successful
  * requests would pass 5,000 (the pilot's two requests count).
  *
- *   bun jev-experiments/packages/arena/prose/record.ts [limit] [--dry-run]
+ *   bun packages/arena/prose/record.ts [limit] [--dry-run]
  */
 import { createHash } from "node:crypto";
 import { GatewayError, jevCostUsd } from "../../jev-client/src/index";

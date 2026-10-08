@@ -177,9 +177,9 @@ Decision rules:
 Run from the repository root:
 
 ```sh
-bun test jev-experiments/packages/arena/prose
-bun jev-experiments/packages/arena/prose/record.ts
-bun jev-experiments/packages/arena/prose/analyze.ts
+bun test packages/arena/prose
+bun packages/arena/prose/record.ts
+bun packages/arena/prose/analyze.ts
 ```
 
 ### Sources

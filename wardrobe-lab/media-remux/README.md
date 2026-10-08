@@ -27,8 +27,8 @@ FFmpeg's [stream-copy mode](https://ffmpeg.org/ffmpeg.html#Streamcopy) avoids de
 ## Verification
 
 ```sh
-bun test jev-experiments/wardrobe-lab
-bun jev-experiments/wardrobe-lab/media-remux/serve.ts
+bun test wardrobe-lab
+bun wardrobe-lab/media-remux/serve.ts
 # Read-only local playback at http://127.0.0.1:8898 for five minutes.
 ```
 

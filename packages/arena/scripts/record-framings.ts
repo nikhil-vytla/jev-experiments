@@ -12,7 +12,7 @@
  * as recordings/attempt-1-provider-busy.jsonl. Turns make waiting free, so
  * transport retries do not bias the comparison; weak answers are never retried.
  *
- *   bun jev-experiments/packages/arena/scripts/record-framings.ts
+ *   bun packages/arena/scripts/record-framings.ts
  *
  * Raw output is kept gzipped (tetris-framings.jsonl.gz); the site replays the
  * compact tetris-framings.replay.jsonl (answers only; requests are rebuilt

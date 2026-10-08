@@ -2,7 +2,7 @@
  * Writes every Decide request (decision × setup) to .cache/decide/requests.json, for recorders
  * outside TypeScript (record-decide-laya.py). The requests are exactly what the page shows.
  *
- *   bun jev-experiments/packages/arena/scripts/decide-export.ts
+ *   bun packages/arena/scripts/decide-export.ts
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { DECK, requestFor } from "../src/decide/deck";

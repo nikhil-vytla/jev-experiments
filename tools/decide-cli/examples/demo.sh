@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Demo: every jev-decide command, with no key and no GPU. Starts the hash mock, runs the
-# commands, stops the mock it started. Run from jev-experiments/:  bash tools/decide-cli/examples/demo.sh
+# commands, stops the mock it started. Run from the repository root:  bash tools/decide-cli/examples/demo.sh
 set -euo pipefail
 
 cli="bun tools/decide-cli/cli.ts"

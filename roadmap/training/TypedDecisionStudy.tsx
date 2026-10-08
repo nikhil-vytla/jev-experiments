@@ -171,13 +171,13 @@ export function TypedDecisionStudy() {
         <summary>Run a typed decision locally on a Mac</summary>
         <p>
           From a{" "}
-          <a href="https://github.com/nikhil-vytla/hatch">
+          <a href="https://github.com/nikhil-vytla/jev-experiments">
             repository checkout
           </a>{" "}
           containing this release, install the toolkit with:
         </p>
         <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>
-          bash jev-experiments/roadmap/mac/install.sh
+          bash roadmap/mac/install.sh
         </pre>
         <p>
           The guide covers checksum-verified model installation, diagnostics and

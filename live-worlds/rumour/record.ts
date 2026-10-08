@@ -4,7 +4,7 @@
  * credentials helper and never runs in the browser. Caps: 300 requests, $0.10. Not resumable:
  * every run appends a fresh set; any failure stops it.
  *
- *   cd jev-experiments/experience-prototypes && bun ../live-worlds/rumour/record.ts [--dry-run]
+ *   cd experience-prototypes && bun ../live-worlds/rumour/record.ts [--dry-run]
  */
 import { jevEndpoint, type JevResult, type Reply } from "../../packages/jev-client/src/endpoints";
 import { JEV_USD_PER_INPUT_TOKEN } from "../../packages/jev-client/src/price";

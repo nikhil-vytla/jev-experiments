@@ -128,7 +128,7 @@ export function MusicNote({ note }: { note: Note }) {
         className="note-code"
         source={{
           text: source,
-          path: "jev-experiments/music-arranger-v2/engine.ts",
+          path: "music-arranger-v2/engine.ts",
         }}
         title="The boundary that accepts the draft"
         markers={{
@@ -158,7 +158,7 @@ export function MusicNote({ note }: { note: Note }) {
         className="note-code"
         source={{
           text: source,
-          path: "jev-experiments/music-arranger-v2/engine.ts",
+          path: "music-arranger-v2/engine.ts",
         }}
         title="A lock rejects a phrase replacement"
         markers={{
@@ -169,27 +169,27 @@ export function MusicNote({ note }: { note: Note }) {
       <aside className="note-references">
         <h2>Source and evidence</h2>
         <p>
-          <a href={repoSource("jev-experiments/music-arranger-v2/README.md")}>
+          <a href={repoSource("music-arranger-v2/README.md")}>
             Composition and recording protocol
           </a>{" "}
           ·{" "}
           <a
             href={repoSource(
-              "jev-experiments/music-arranger-v2/music-v2.jsonl.gz",
+              "music-arranger-v2/music-v2.jsonl.gz",
             )}
           >
             Retained model requests and answers
           </a>{" "}
           ·{" "}
           <a
-            href={repoSource("jev-experiments/music-arranger-v2/audio.test.ts")}
+            href={repoSource("music-arranger-v2/audio.test.ts")}
           >
             Audio scheduling tests
           </a>{" "}
           ·{" "}
           <a
             href={repoSource(
-              "jev-experiments/release-implementation-2026-09-22/music-mechanism/README.md",
+              "release-implementation-2026-09-22/music-mechanism/README.md",
             )}
           >
             Mechanism implementation checks

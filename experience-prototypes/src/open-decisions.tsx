@@ -318,7 +318,7 @@ curl localhost:30000/v1/systemone -H 'Content-Type: application/json' -d '{
 }'
 
 # This page's MLX port, on a Mac
-uv run --with mlx-lm python jev-experiments/packages/arena/open-decisions/server.py \\
+uv run --with mlx-lm python packages/arena/open-decisions/server.py \\
   --model mlx-community/Qwen3.5-0.8B-8bit --port 30000`}</pre>
       </Fold>
 

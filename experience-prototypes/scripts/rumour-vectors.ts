@@ -3,7 +3,7 @@
  * place descriptions, and the preset messages. The page ships these so a preset starts spreading
  * before the model has downloaded; your own text is embedded in your browser by the same model.
  *
- *   cd jev-experiments/experience-prototypes && bun scripts/rumour-vectors.ts
+ *   cd experience-prototypes && bun scripts/rumour-vectors.ts
  */
 import { pipeline } from "@huggingface/transformers";
 import { writeFileSync } from "node:fs";

@@ -73,7 +73,7 @@ export type HeadlineInputs = {
   records: { id: string; result: RecordResult | null }[];
 };
 
-/** Reads every input; `lab` is jev-experiments/, `app` is experience-prototypes/ after prepare. */
+/** Reads every input; `lab` is the repository root, `app` is experience-prototypes/ after prepare. */
 export function loadHeadlineInputs(lab: string, app: string): HeadlineInputs {
   const prose = read<ProseResults & { decoy: DecoyResults }>(join(lab, "packages/arena/prose/results.json"));
   const fool = read<FoolData>(join(app, "public/fool/fool.json"));

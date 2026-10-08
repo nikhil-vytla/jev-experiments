@@ -4,7 +4,7 @@
  * one request at a time with a 700 ms gap, busy replies waited out and every attempt logged,
  * weak answers never re-asked. Truths are never sent. Append-only and resumable.
  *
- *   bun jev-experiments/packages/arena/scripts/record-decide.ts [--dry-run]
+ *   bun packages/arena/scripts/record-decide.ts [--dry-run]
  */
 import { jevEndpoint } from "../../jev-client/src/endpoints";
 import { attemptErrorRow, attemptRow, record, recorderKey, waitOutBusy, type Job } from "../../jev-client/src/recorder";

@@ -4,7 +4,7 @@
  * answer baseline, per kind and question, then calibration bins (stated confidence against
  * how often the top answer is right).
  *
- *   bun jev-experiments/packages/arena/scripts/checkable-report.ts
+ *   bun packages/arena/scripts/checkable-report.ts
  */
 import { existsSync, readFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";

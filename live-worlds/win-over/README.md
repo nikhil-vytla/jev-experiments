@@ -68,7 +68,7 @@ What this shows:
 - the merge/split round trip
 
 ```sh
-bun test jev-experiments/live-worlds/win-over
+bun test live-worlds/win-over
 ```
 
 ## Caveats

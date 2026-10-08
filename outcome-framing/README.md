@@ -42,9 +42,9 @@ Noul returns a membership probability. Rendering it as brightness is a display c
 Run from the repository root:
 
 ```sh
-bun jev-experiments/outcome-framing/verify.ts
-bun test jev-experiments/outcome-framing/tetris.test.ts jev-experiments/outcome-framing/drawing.test.ts
-bun jev-experiments/outcome-framing/record.ts prepare
+bun outcome-framing/verify.ts
+bun test outcome-framing/tetris.test.ts outcome-framing/drawing.test.ts
+bun outcome-framing/record.ts prepare
 ```
 
 `verify.ts` replays all 611 game transitions and reconstructs all 8,448 pixel values from accepted responses. It checks exact request hashes, unique accepted responses, complete answer coverage, terminal states, reference masks and metrics. The archive contains 292 accepted native requests and 369 transport attempts. Provider retries are retained separately; accepted weak answers are never retried to obtain a better result. `prepare` regenerates published JSONL from accepted evidence without model calls.

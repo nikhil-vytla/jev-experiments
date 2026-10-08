@@ -35,7 +35,7 @@ Local scores are tag-match counts, and zero matches are explicit. Live and recor
 
 ## Validation
 
-`bun test jev-experiments/live-worlds/ghost-brush` passes 18 tests with 164 assertions. Tests cover all ten distinct deterministic recipes, event-rate invariance, seed sensitivity, degenerate inputs, SVG text escaping, full score coverage, invalid scores, ties, six stale-result paths, mid-stroke application, superseded failures, manual-source attribution, immutable forks/restores exact recorded-request/response hashes, active-stroke undo protection and restored receipt attribution.
+`bun test live-worlds/ghost-brush` passes 18 tests with 164 assertions. Tests cover all ten distinct deterministic recipes, event-rate invariance, seed sensitivity, degenerate inputs, SVG text escaping, full score coverage, invalid scores, ties, six stale-result paths, mid-stroke application, superseded failures, manual-source attribution, immutable forks/restores exact recorded-request/response hashes, active-stroke undo protection and restored receipt attribution.
 
 The Playwright CLI checks in `browser-qa.js` passed 14 actual browser checks: pointer and keyboard drawing, undo, local/recorded attribution, restoration, abandoned-sheet retention, comparison, missing-key behavior, both downloads, 390 px width and reduced motion. `browser-lifecycle-qa.js` passed five additional checks using explicitly intercepted HTTP fixtures. These confirmed ink while pending, between-stroke application and rejection of obsolete responses without making model calls. Two further actual browser regressions verify that Ctrl+Z during an active second stroke preserves both strokes, and that restoring a recorded variant restores its Jev attribution. The fixture tests are software evidence, separate from the two genuine demonstrations. The app typecheck passed, and browser console inspection showed no runtime errors.
 
@@ -49,21 +49,21 @@ From the repository root:
 
 ```sh
 # Required once after a clean checkout for standalone tests:
-bun jev-experiments/live-worlds/prepare.ts
-bun test jev-experiments/live-worlds/ghost-brush
-bun jev-experiments/live-worlds/ghost-brush/validate.ts
-bun jev-experiments/live-worlds/ghost-brush/record.ts
+bun live-worlds/prepare.ts
+bun test live-worlds/ghost-brush
+bun live-worlds/ghost-brush/validate.ts
+bun live-worlds/ghost-brush/record.ts
 # Explicitly authorized recording only; completed examples are reused:
-bun jev-experiments/live-worlds/ghost-brush/record.ts --run
+bun live-worlds/ghost-brush/record.ts --run
 ```
 
 With the app serving at port 5193 and the installed Playwright skill wrapper:
 
 ```sh
 /Users/nikhil/.codex/skills/playwright/scripts/playwright_cli.sh -s=ghost-brush open http://127.0.0.1:5193/#experiment/ghost-brush --headed
-bun jev-experiments/live-worlds/ghost-brush/qa.ts
-bun jev-experiments/live-worlds/ghost-brush/qa.ts --lifecycle
-bun jev-experiments/live-worlds/ghost-brush/qa.ts --regression
+bun live-worlds/ghost-brush/qa.ts
+bun live-worlds/ghost-brush/qa.ts --lifecycle
+bun live-worlds/ghost-brush/qa.ts --regression
 ```
 
 App integration is `import { GhostBrush } from './ghost-brush'` and `<GhostBrush />`. No result prop or new package is required. The shared `live-worlds/prepare.ts` derives the ignored `examples.json` from the committed recording manifest and event JSONL; app build and app test run this preparation automatically. Standalone folder tests need the preparation command above after a clean checkout. Do not commit a duplicate pretty JSON copy. The test glob is `../live-worlds/ghost-brush/*.test.ts`. Root owns catalog, route, publication, prepare and final build integration. This work changed only this folder and `src/ghost-brush.tsx` / `.css`; no worker commit or deployment was made.

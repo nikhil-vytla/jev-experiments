@@ -4,19 +4,19 @@ This folder contains the shared TypeScript router, Bun CLI, local MCP server, we
 
 ## Run it
 
-Install from this checkout with `sh jev-experiments/roadmap/routing/install.sh`, or pass an explicit prefix as its first argument. This builds a small Bun script bundle without training dependencies, weights or client configuration changes. Add the printed bin directory to PATH. Uninstall by removing only that prefix. A historical version 1 [fresh temporary-prefix install](fresh-install.json) passed doctor, stdio discovery and a read-only email example.
+Install from this checkout with `sh roadmap/routing/install.sh`, or pass an explicit prefix as its first argument. This builds a small Bun script bundle without training dependencies, weights or client configuration changes. Add the printed bin directory to PATH. Uninstall by removing only that prefix. A historical version 1 [fresh temporary-prefix install](fresh-install.json) passed doctor, stdio discovery and a read-only email example.
 
 From the repository root:
 
 ```sh
-bun jev-experiments/roadmap/routing/cli.ts doctor
-bun jev-experiments/roadmap/routing/cli.ts decide request.json
-bun jev-experiments/roadmap/routing/cli.ts classify_eml message.eml
-JEV_ROUTER_CONFIG=jev-experiments/roadmap/integration/examples/router.json \
-  bun jev-experiments/roadmap/routing/cli.ts route_task \
-  jev-experiments/roadmap/integration/examples/task.json
-bun jev-experiments/roadmap/routing/mcp.ts
-bun test jev-experiments/roadmap/routing
+bun roadmap/routing/cli.ts doctor
+bun roadmap/routing/cli.ts decide request.json
+bun roadmap/routing/cli.ts classify_eml message.eml
+JEV_ROUTER_CONFIG=roadmap/integration/examples/router.json \
+  bun roadmap/routing/cli.ts route_task \
+  roadmap/integration/examples/task.json
+bun roadmap/routing/mcp.ts
+bun test roadmap/routing
 ```
 
 No destination is configured by default. `doctor` reports the configuration. The example route requires an installed, authenticated OpenCode and access to the specified Bedrock model. A trusted JSON registry supplies capabilities, model limits, pricing evidence, destination endpoint and policy. Remote HTTP destinations require HTTPS; local destinations require loopback and reject redirects. The server writes only JSON-RPC on stdout. Optional `JEV_MCP_AUDIT` records method names, status, artifact kind and context byte counts, never task text or credentials.

@@ -10,7 +10,7 @@ import {
 } from "../src/components/source-code/revision";
 
 const registryId = "virtual:jev-source-revisions";
-const repositoryRoot = fileURLToPath(new URL("../../..", import.meta.url));
+const repositoryRoot = fileURLToPath(new URL("../..", import.meta.url));
 const registryPath = fileURLToPath(
   new URL("../src/components/source-code/revision.ts", import.meta.url),
 );
@@ -35,7 +35,6 @@ export function loadSourceWithRevision(
     path = relative(resolve(root), requested).split("\\").join("/");
     if (
       !isRepositoryPath(path) ||
-      !path.startsWith("jev-experiments/") ||
       path.split("/").some((part) => part === "node_modules" || part === ".git") ||
       realpathSync(requested) !== resolve(canonicalRoot, path)
     )

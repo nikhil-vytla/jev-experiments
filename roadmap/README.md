@@ -13,4 +13,4 @@ The release lab's plans, decision tickets, reviews, delivery slices, design rese
 | [`playable/`](playable/README.md) | Crowd and music prototypes with their tests. |
 | [`MAP.md`](MAP.md) | The work map the About page and the retired-scenes list link to. |
 
-The [typed-runtime workflow](../../.github/workflows/jev-typed-runtime.yml) watches `runtime/`, `routing/`, `mac/` and `tsconfig.json`, so those paths stay until the workflow changes with them.
+The [typed-runtime workflow](../.github/workflows/jev-typed-runtime.yml) watches `runtime/`, `routing/`, `mac/` and `tsconfig.json`, so those paths stay until the workflow changes with them.

@@ -11,7 +11,7 @@ import { compressRecord } from "./records";
 import { gzippedRecordings } from "./publication";
 
 /**
- * Paths relative to jev-experiments/: every recording the publication manifest reads that is
+ * Paths relative to the repository root: every recording the publication manifest reads that is
  * committed as `.gz`, and the builders' own. Keep their plain copies in .gitignore.
  */
 export const GZIPPED_RECORDINGS = gzippedRecordings();

@@ -1,6 +1,6 @@
 # One Jev application
 
-The current application is deployed to [jev-experiments.vercel.app](https://jev-experiments.vercel.app), using the existing Vercel project and production credentials. The source lives in `jev-experiments/experience-prototypes`; the older `web` folder is the preceding implementation.
+The current application is deployed to [jev-experiments.vercel.app](https://jev-experiments.vercel.app), using the existing Vercel project and production credentials. The source lives in `experience-prototypes/` (it was `jev-experiments/experience-prototypes` in hatch until 2026-10-07); the older `web` folder is the preceding implementation.
 
 `bun run deploy` pins that project, prepares the evidence and browser companion locally, builds the app, and deploys production. The companion, smoke-check script, and current documentation all use the same canonical address. Deployment history remains available for rollback.
 

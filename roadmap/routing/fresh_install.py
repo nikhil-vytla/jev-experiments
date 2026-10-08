@@ -17,9 +17,9 @@ import tempfile
 import time
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
-SOURCE_FOLDERS = ["jev-experiments/roadmap/routing", "jev-experiments/roadmap/runtime",
-                  "jev-experiments/packages/decision-runtime/src", "jev-experiments/packages/jev-client/src"]
+ROOT = HERE.parents[1]
+SOURCE_FOLDERS = ["roadmap/routing", "roadmap/runtime",
+                  "packages/decision-runtime/src", "packages/jev-client/src"]
 NATIVE_REQUEST = {
     "schemaVersion": "2", "requestId": "installed-native-v2",
     "state": {"fixture": ["structured", {"count": 2, "enabled": True}, None]},
@@ -71,7 +71,7 @@ def run_check():
     # The opt-in hosted classifier shares the maintained native gateway adapter
     # (packages/jev-client, in SOURCE_FOLDERS). A working checkout must not hide
     # an incomplete standalone bundle dependency closure.
-    source_files += [HERE / "install.sh", ROOT / "jev-experiments/roadmap/mac/models.json"]
+    source_files += [HERE / "install.sh", ROOT / "roadmap/mac/models.json"]
     source_hashes = {path.relative_to(ROOT).as_posix(): digest(path.read_bytes()) for path in sorted(source_files)}
     historical = HERE / "fresh-install.json"
     historical_hash = digest(historical.read_bytes()) if historical.exists() else None
@@ -98,7 +98,7 @@ def run_check():
             [bun, "-e", 'console.log(JSON.stringify(require("node:module").builtinModules))'],
             cwd=cwd, env=env, text=True)))
         prefix = area / "installed prefix with spaces"
-        install = subprocess.run(["sh", str(stage / "jev-experiments/roadmap/routing/install.sh"), str(prefix)],
+        install = subprocess.run(["sh", str(stage / "roadmap/routing/install.sh"), str(prefix)],
                                  cwd=cwd, env=env, capture_output=True, text=True, timeout=30)
         require(install.returncode == 0, "Isolated staged installation failed")
         bundle = (prefix / "lib/jev.js").read_bytes()

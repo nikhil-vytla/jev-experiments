@@ -25,9 +25,9 @@ Every new world separates local code, recorded answers, live answers and human i
 Independent cross-review found and repaired mutable crowd observations, missing failure receipts, lost brush-selection provenance, active-stroke undo, and same-tick Tetris evidence mismatch. Scoped reports retain the findings and describe their follow-through. The full app test suite covers engines, asynchronous lifecycle, evidence and credential isolation; browser checks exercise both desktop and 390px mobile layouts, dark mode, takeover, scrub, restoration and delayed responses.
 
 ```sh
-bun jev-experiments/live-worlds/prepare.ts
-bun test jev-experiments/live-worlds
-cd jev-experiments/experience-prototypes
+bun live-worlds/prepare.ts
+bun test live-worlds
+cd experience-prototypes
 bun run test
 bun run build
 ```

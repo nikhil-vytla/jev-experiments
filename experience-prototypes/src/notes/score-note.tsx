@@ -202,7 +202,7 @@ export function ScoreNote() {
         className="note-code"
         source={{
           text: contractSource,
-          path: "jev-experiments/roadmap/runtime/contract.ts",
+          path: "roadmap/runtime/contract.ts",
         }}
         title="The runtime's distribution summary"
         markers={{
@@ -216,7 +216,7 @@ export function ScoreNote() {
           This distinction matters when exporting a local model. Two runtimes
           can choose the same level while putting different probability
           elsewhere, changing an expected score or a later threshold. The{" "}
-          <a href={repoSource("jev-experiments/roadmap/training/README.md")}>
+          <a href={repoSource("roadmap/training/README.md")}>
             typed-readout study
           </a>{" "}
           therefore retains complete MLX and Core ML probability comparisons,
@@ -236,7 +236,7 @@ export function ScoreNote() {
           className="note-code"
           source={{
             text: scoreSource,
-            path: "jev-experiments/experience-prototypes/src/notes/score-mechanism.ts",
+            path: "experience-prototypes/src/notes/score-mechanism.ts",
           }}
           title="Authored controls → runtime summary"
           markers={{ start: "export function summarizeScore(" }}
@@ -245,12 +245,12 @@ export function ScoreNote() {
       <aside className="note-references">
         <h2>Read alongside</h2>
         <p>
-          <a href={repoSource("jev-experiments/roadmap/training/PROTOCOL.md")}>
+          <a href={repoSource("roadmap/training/PROTOCOL.md")}>
             Frozen study protocol
           </a>{" "}
           ·{" "}
           <a
-            href={repoSource("jev-experiments/roadmap/training/PROVENANCE.md")}
+            href={repoSource("roadmap/training/PROVENANCE.md")}
           >
             Data and model provenance
           </a>

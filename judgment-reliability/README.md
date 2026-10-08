@@ -70,17 +70,17 @@ Content triage reuses 10 exact-question matches to prior human review and adds 1
 Run from the repository root, using Bun and the existing local recording credential loader. Credentials remain server-side and are never imported into the frontend.
 
 ```sh
-bun jev-experiments/judgment-reliability/prepare-source.ts
-bun jev-experiments/judgment-reliability/record.ts
-bun test jev-experiments/judgment-reliability/scoring.test.ts
-bun jev-experiments/judgment-reliability/verify.ts --complete
-bun jev-experiments/judgment-reliability/analyze.ts
-bun jev-experiments/judgment-reliability/prepare.ts /tmp/judge-preview
-bun jev-experiments/judgment-reliability/report.ts
+bun judgment-reliability/prepare-source.ts
+bun judgment-reliability/record.ts
+bun test judgment-reliability/scoring.test.ts
+bun judgment-reliability/verify.ts --complete
+bun judgment-reliability/analyze.ts
+bun judgment-reliability/prepare.ts /tmp/judge-preview
+bun judgment-reliability/report.ts
 ```
 
 prepare-source.ts uses the pinned upstream files in the existing ignored cache and refuses source/protocol drift. A clean checkout already contains cases.jsonl and manifest.json, so recording and analysis can start without that preparation step. record.ts resumes only unanswered evaluations, verifies successful question hashes, logs retries and recovers normalized rows from complete recorded batches if interrupted. Set JUDGE_CONCURRENCY only to change recording pace. prepare.ts exposes prepareJudgmentReliability(target) for the app's clean build; it generates hashed chunks from committed evidence and returns the compact publication document.
 
 Ten deterministic tests cover the full official vote/tie/null truth table, identity remapping, ties versus numeric drift, all source coverage, exact candidate preservation, no gold metadata in model evidence, content gate retention, and unchanged per-question hashes/information sets across all three repeats. Regression cases also check missing source IDs, identical questions with different IDs, and unchanged headline scores after the grouping correction. Browser validation is recorded in NOTES.md.
 
-For an already-running recording, `bun jev-experiments/judgment-reliability/finalize.ts --wait-for-pid=PID` waits for that process, requires its lock to be gone, then runs complete verification, analysis and report generation. It makes no model calls, commits or deployments. An ignored `.finalization.json` records completion or a failure requiring review. Publish a final data snapshot only after inspecting the verified reports.
+For an already-running recording, `bun judgment-reliability/finalize.ts --wait-for-pid=PID` waits for that process, requires its lock to be gone, then runs complete verification, analysis and report generation. It makes no model calls, commits or deployments. An ignored `.finalization.json` records completion or a failure requiring review. Publish a final data snapshot only after inspecting the verified reports.

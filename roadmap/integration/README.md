@@ -30,7 +30,7 @@ Copy the matching example and replace the absolute paths. Keep credentials in th
 
 The short [jev-route-task skill](skills/jev-route-task/SKILL.md) explains complete-context delegation, artifact review, host-applied changes, independent tests and preserving no-route restrictions. It is client-neutral and can be placed in each client's supported skill folder. It passed the skill frontmatter validator.
 
-Reproduce a fixture with `python3 jev-experiments/roadmap/integration/run_harness.py opencode --timeout 480 --evidence-name opencode-new-condition`, replacing `opencode` with `claude` or `codex`. A rerun writes a new temporary repository and refuses to overwrite retained evidence. These commands make real provider calls through installed clients and the configured destination. They do not publish a repository or send messages to people.
+Reproduce a fixture with `python3 roadmap/integration/run_harness.py opencode --timeout 480 --evidence-name opencode-new-condition`, replacing `opencode` with `claude` or `codex`. A rerun writes a new temporary repository and refuses to overwrite retained evidence. These commands make real provider calls through installed clients and the configured destination. They do not publish a repository or send messages to people.
 
 ## Evidence boundaries
 
@@ -78,4 +78,4 @@ Each passing session made exactly two calls, returned readable explanations, rec
 
 The [first OpenCode boundary condition](evidence/boundary-opencode/summary.portable.json) returned both expected statuses but could not write its explanation file because the absolute permission pattern did not match worktree-relative permission checks. It remains a failed gate. The corrected condition changed only fixture file permissions and kept the same task requests, empty registry and restrictions. The evidence index now contains16 sessions:12 condition passes and4 retained failures. Raw host explanations are observations, not accepted performance claims; single-call timing explanations in those files are not a measured causal result.
 
-Reproduce a new condition with `python3 jev-experiments/roadmap/integration/boundary_harness.py opencode --evidence-suffix new-condition` (or claude/codex). Existing evidence is never overwritten. The protocol and generated per-run summaries distinguish these failure-handling passes from successful delegation of a coding task.
+Reproduce a new condition with `python3 roadmap/integration/boundary_harness.py opencode --evidence-suffix new-condition` (or claude/codex). Existing evidence is never overwritten. The protocol and generated per-run summaries distinguish these failure-handling passes from successful delegation of a coding task.
