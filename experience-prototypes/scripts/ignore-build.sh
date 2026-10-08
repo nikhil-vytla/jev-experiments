@@ -9,11 +9,11 @@
 # entry ships a stale site. A failed diff (no parent commit in a shallow clone) builds.
 cd "$(git rev-parse --show-toplevel)" || exit 1
 if git diff --quiet HEAD^ HEAD -- . \
-  ':!archive' ':!.github' ':!adapters' ':!agents' ':!apps' ':!artifacts' ':!extensions' \
-  ':!gateway-accounting-2026-09-22' ':!release-implementation-2026-09-22' \
-  ':!scene-lifetimes-2026-09-22' ':!typed-runtime-2026-09-22' ':!src' ':!tests' ':!tools' \
-  ':!AGENTS.md' ':!CLAUDE.md' ':!NOTES.md' ':!_summary.md' ':!pyproject.toml' ':!uv.lock' \
-  ':!.oxlintrc.json' ':!.oxfmtrc.json'; then
+  ':(exclude)archive' ':(exclude).github' ':(exclude)adapters' ':(exclude)agents' ':(exclude)apps' ':(exclude)artifacts' ':(exclude)extensions' \
+  ':(exclude)gateway-accounting-2026-09-22' ':(exclude)release-implementation-2026-09-22' \
+  ':(exclude)scene-lifetimes-2026-09-22' ':(exclude)typed-runtime-2026-09-22' ':(exclude)src' ':(exclude)tests' ':(exclude)tools' \
+  ':(exclude)AGENTS.md' ':(exclude)CLAUDE.md' ':(exclude)NOTES.md' ':(exclude)_summary.md' ':(exclude)pyproject.toml' ':(exclude)uv.lock' \
+  ':(exclude).oxlintrc.json' ':(exclude).oxfmtrc.json'; then
   exit 0
 fi
 exit 1
